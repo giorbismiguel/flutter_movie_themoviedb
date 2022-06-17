@@ -11,7 +11,11 @@ class Media {
   List<dynamic> genreIds;
 
   factory Media(Map jsonMap) {
-    return new Media.deserialize(jsonMap);
+    try {
+      return new Media.deserialize(jsonMap);
+    } catch (ex) {
+      throw ex;
+    }
   }
 
   Media.deserialize(Map json)
@@ -26,5 +30,4 @@ class Media {
 
   String getPosterUrl() => getMediumPictureUrl(posterPath);
   String getBackDorpUrl() => getLargePictureUrl(backgropPath);
-
 }
