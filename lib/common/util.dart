@@ -35,7 +35,7 @@ List<String> getGenresToList(List<dynamic> genreIds) {
 
 String getGenreValues(List<dynamic> genreIds) {
   StringBuffer buffer = new StringBuffer();
-  buffer.writeAll(getGenresToList(genreIds), " ,");
+  buffer.writeAll(getGenresToList(genreIds), ", ");
   
   return buffer.toString();
 }
