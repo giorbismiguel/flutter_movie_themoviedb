@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/common/HttpHandler.dart';
+import 'package:movies_app/media_list_item.dart';
 import 'package:movies_app/model/Media.dart';
 
 class MediaList extends StatefulWidget {
@@ -19,7 +20,7 @@ class _MediaListState extends State<MediaList> {
 
   void loadMovies() async {
     var movies = await HttpHandler().fetchMovies();
-    
+
     setState(() {
       _media.addAll(movies);
     });
@@ -31,11 +32,10 @@ class _MediaListState extends State<MediaList> {
       child: new ListView.builder(
           itemCount: _media.length,
           itemBuilder: (BuildContext context, int index) {
-            return new Column(
-              children: <Widget>[
-                new Image.network(_media[index].getPosterUrl())
-              ],
-            );
+            return new MediaListItem(media: this._media[index]);
+            // return new Column(
+            //   children: <Widget>[new MediaListItem(media: this._media[index])],
+            // );
           }),
     );
   }

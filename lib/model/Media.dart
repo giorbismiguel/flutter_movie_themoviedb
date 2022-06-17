@@ -25,5 +25,6 @@ class Media {
         genreIds = json["genre_ids"].toDouble().toList();
 
   String getPosterUrl() => getMediumPictureUrl(posterPath);
+  String getBackDorpUrl() => getLargePictureUrl(backgropPath);
 
 }
