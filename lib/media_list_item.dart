@@ -55,6 +55,12 @@ class MediaListItem extends StatelessWidget {
                       ),
                     ],
                   ) 
+                ),
+
+                new Positioned(
+                  child: new Text(
+                    media.getGenres()
+                  )
                 )
               ],
             ),

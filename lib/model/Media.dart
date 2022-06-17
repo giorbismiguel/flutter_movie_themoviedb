@@ -30,4 +30,5 @@ class Media {
 
   String getPosterUrl() => getMediumPictureUrl(posterPath);
   String getBackDorpUrl() => getLargePictureUrl(backgropPath);
+  String getGenres() => getGenreValues(genreIds);
 }
